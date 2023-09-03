@@ -7,6 +7,9 @@ let computerScore = document.querySelector("#computer-score");
 let resultTie = document.querySelector("#result-tie");
 let playerChoice = document.querySelector("#player-choice");
 let computerChoice = document.querySelector("#computer-choice");
+let rockImg = document.querySelector('#rockImg');
+let paperImg = document.querySelector('#paperImg');
+let scissorsImg = document.querySelector('#scissorsImg');
 
 // Global variables to keep track of the round results
 let computerWinAmount = 0;
@@ -18,6 +21,10 @@ let tieAmount = 0;
 function playGame(e) {
   let playerSelection = e.target.id;
   let computerSelection = getComputerChoice();
+  let imagePlayer = `<img src='/img/${playerSelection}.jpg'>`;
+  let imageComputer = `<img src='/img/${computerSelection}.jpg'>`;
+  document.querySelector('#player').innerHTML= imagePlayer;
+  document.querySelector('#computer').innerHTML = imageComputer;
   playRound(playerSelection, computerSelection);
 }
 
@@ -87,6 +94,8 @@ function reset() {
   computerWinAmount = 0;
   playerWinAmount = 0;
   tieAmount = 0;
+  document.querySelector('#player').innerHTML= '';
+  document.querySelector('#computer').innerHTML= '';
 
   playerScore.textContent = "Your score is: 0";
   computerScore.textContent = "The computer score is: 0";
