@@ -21,8 +21,8 @@ let tieAmount = 0;
 function playGame(e) {
   let playerSelection = e.target.id;
   let computerSelection = getComputerChoice();
-  let imagePlayer = `<img src='/img/${playerSelection}.jpg'>`;
-  let imageComputer = `<img src='/img/${computerSelection}.jpg'>`;
+  let imagePlayer = `<img src='img/${playerSelection}.jpg'>`;
+  let imageComputer = `<img src='img/${computerSelection}.jpg'>`;
   document.querySelector('#player').innerHTML= imagePlayer;
   document.querySelector('#computer').innerHTML = imageComputer;
   playRound(playerSelection, computerSelection);
